@@ -1,0 +1,15 @@
+Henrik:
+- other class, methodes
+
+
+Erik:
+- uml for carro, methodes
+
+
+
+Mathilde:
+- converterer dicto from txt
+- get car info from dircto, metode read carro
+
+Vebjørn:
+- make class for carro
