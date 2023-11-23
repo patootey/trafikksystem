@@ -1,9 +1,5 @@
-# Prosjekt
-# hekkoooooooooooooo
-#many mans could never man
-
 class car:
-    def __init__(self, registNr, bilModell, bilType, kopeAar, bilEier) -> None:
+    def __init__(self, registNr, bilModell, bilType, kopeAar, bilEier):
         self.skilt  = registNr
         self.modell = bilModell
         self.type   = bilType
