@@ -1,7 +1,7 @@
 class car:
-    def __init__(self, registNr, bilModell, bilType, kopeAar, bilEier):
+    def __init__(self, registNr, bilModell, bilType, aarModell, bilEier):
         self.skilt  = registNr
         self.modell = bilModell
         self.type   = bilType
-        self.aar    = kopeAar
+        self.aar    = aarModell
         self.eier   = bilEier
