@@ -167,5 +167,5 @@ print(f"Hour {busy_hour} of the day was hella busy with {u} passings !!!")
 
 busy_car, y = bb.find_busy_car()
 print(
-    f"{busy_car.owner}'s vehicle {busy_car.model}, is the most hella busy car with {y} passings !!!"
+    f"{busy_car.owner}'s {busy_car.type} vehicle {busy_car.model} {busy_car.year} with the registration {busy_car.registration}, was the most hella busy car with {y} passings !!!"
 )
