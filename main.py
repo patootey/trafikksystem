@@ -9,7 +9,7 @@ class Vehicle:
         year (int): Production year
 
     Attribute:
-        type (string): Fuel usage
+        type (string): Fuel type
     """
 
     def __init__(self, registration, model, year, owner):
