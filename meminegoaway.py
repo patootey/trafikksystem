@@ -69,10 +69,8 @@ class TollBooth:
         self.vehicles = []
         self.dates = []
 
-        # Opens the file to read
         with open(data, "r") as file:
             lines = file.readlines()
-            # Goes through all the lines 
             for line in lines:
                 entries = line.strip().split("/n")
                 for entry in entries:
@@ -106,6 +104,7 @@ class TollBooth:
                     ]
 
     def find_busy_day(self):
+        # Method for finding the day with the most passings
         u = 0
         busy_day = None
         for date in self.dates:
@@ -119,6 +118,7 @@ class TollBooth:
         return busy_day, u
     
     def find_busy_hour(self):
+        # Method for finding the hour with the most passings
         u = 0
         busy_hour = None
         for h in range(24):
@@ -132,6 +132,7 @@ class TollBooth:
         return busy_hour, u
     
     def find_busy_car(self):
+        # Method for finding which car passed the most
         u = 0
         busy_car = None
 
