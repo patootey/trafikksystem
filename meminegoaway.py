@@ -28,6 +28,8 @@ class TollBooth:
         self.dates = []
     
     def read_data(self, data):
+        self.vehicles = []
+        self.dates = []
         with open(data, "r") as file:
             lines = file.readlines()
             for line in lines:
@@ -42,17 +44,37 @@ class TollBooth:
                             if not any(date.date == values[0] for date in self.dates):
                                 self.dates.append(Date(values[0]))
                             next(date for date in self.dates if date.date == values[0]).hours[int(values[1])].append(values[2])
-            self.dates = sorted(self.dates, key=lambda date: date.date)                       
+            self.dates = sorted(self.dates, key=lambda date: date.date)
+
+            for date in self.dates:
+                for i, hour in enumerate(date.hours):
+                    date.hours[i] = [next((vehicle for vehicle in self.vehicles if vehicle.registration == car), None) for car in hour]
+
+    def find_busy_day(self):
+        u = 0
+        busy_day = None
+        for date in self.dates:
+            i = 0
+            for hour in date.hours:
+                i+=1
+            if i > u:
+                u = i
+                busy_day = date
+        return busy_day, u
+
+            
+                  
                             
                                             
 
                         
     def print(self):
         for date in self.dates:
-            print(date.hours[7])
+            print(date.hours)
 
 bb = TollBooth()
 
 bb.read_data("trond.txt")
-bb.print()
-print(next(vehicle for vehicle in bb.vehicles if vehicle.registration == bb.dates[0].hours[5][0]).owner)
+print(bb.dates[0].hours[5][1].owner)
+busy_day, i = bb.find_busy_day()
+print(F"The {busy_day.day}th of {busy_day.month} in {busy_day.year} was hella busy with {i} passings!!!")
