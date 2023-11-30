@@ -11,7 +11,7 @@ class Vehicle:
     """
 
     def __init__(self, registration, model, year, owner):
-        # Constructor that recieves and uses parameters
+        # __init__ that recieves and uses parameters
         self.registration   = registration
         self.model          = model
         self.owner          = owner
@@ -30,7 +30,7 @@ class Vehicle:
 
 class Date:
     """
-    Class for making date
+    Class for making all the dates registered
 
     Parameters:
         date (str): The date the car passed
@@ -42,6 +42,7 @@ class Date:
         hours (str): Array with all 24 hours to keep track of passages during said hours
     """
     def __init__(self, date):
+        # __init__ that takes the parameter and creates attributes
         self.date = date
         self.year = self.date[:4]
         self.month = self.date[4:6]
@@ -51,9 +52,14 @@ class Date:
 
 class TollBooth:
     """
-    Class for 
+    Class for reading the data file and finding the busiest day, hour and car
+
+    Attributes:
+        vehicles (list): List of all the cars as made in the Vehicle class
+        dates (list): List of all the dates as made in the Date class
     """
     def __init__(self):
+        # __init__ that creates attributes for the two other classes
         self.vehicles = []
         self.dates = []
 
