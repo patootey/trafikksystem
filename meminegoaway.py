@@ -159,7 +159,7 @@ bb.read_data("trond.txt")
 print(bb.dates[0].hours[5][1].owner)
 busy_day, i = bb.find_busy_day()
 print(
-    f"The {busy_day.day}th of {busy_day.month} in {busy_day.year} was hella busy with {i} passings!!!"
+    f"The {busy_day.day}th of {busy_day.month} in {busy_day.year} was hella busy with {i} passings !!!"
 )
 
 busy_hour, u = bb.find_busy_hour()
