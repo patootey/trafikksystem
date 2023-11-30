@@ -7,6 +7,8 @@ class Vehicle:
         model (string): The brand of the car
         owner (string): Name of the registered owner
         year (int): Production year
+    
+    Attribute:
         type (string): Fuel usage
     """
 
