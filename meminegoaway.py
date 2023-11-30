@@ -56,7 +56,8 @@ class TollBooth:
         for date in self.dates:
             i = 0
             for hour in date.hours:
-                i+=1
+                for vehicle in hour:
+                    i+=1
             if i > u:
                 u = i
                 busy_day = date
