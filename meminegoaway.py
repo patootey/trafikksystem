@@ -1,10 +1,10 @@
 class Vehicle:
     def __init__(self, registration, model, year, owner):
-        self.registration = registration
-        self.model = model
-        self.owner = owner
-        self.year = int(year)
-        self.type = self.determine_type()
+        self.registration   = registration
+        self.model          = model
+        self.owner          = owner
+        self.year           = int(year)
+        self.type           = self.determine_type()
 
     def determine_type(self):
         if self.registration[0] == "E":
