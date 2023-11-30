@@ -1,5 +1,17 @@
 class Vehicle:
+    """
+    Class to make vehicle and determine car type
+
+    Parametres:
+        registration (string):  The registration number on the cars license plate
+        model (string):         The brand of the car
+        owner (string):         Name of the registered owner
+        year (int):             Production year
+        type (string):          Fuel usage
+    """
+
     def __init__(self, registration, model, year, owner):
+        # Constructor that recieves and uses parameters
         self.registration   = registration
         self.model          = model
         self.owner          = owner
@@ -7,6 +19,7 @@ class Vehicle:
         self.type           = self.determine_type()
 
     def determine_type(self):
+        # Method for determining fuel type by license plate
         if self.registration[0] == "E":
             return "Electric"
         elif self.registration[0] == "D":
@@ -16,6 +29,18 @@ class Vehicle:
 
 
 class Date:
+    """
+    Class for making date
+
+    Parameters:
+        date (str): The date the car passed
+
+    Attributes:
+        year (str): The year as it was in the date parameter
+        month (str): The month as it was in the date parameter
+        day (str): The day as it was in the date parameter
+        hours (str): Array with all 24 hours to keep track of passages during said hours
+    """
     def __init__(self, date):
         self.date = date
         self.year = self.date[:4]
@@ -25,6 +50,9 @@ class Date:
 
 
 class TollBooth:
+    """
+    Class for 
+    """
     def __init__(self):
         self.vehicles = []
         self.dates = []
