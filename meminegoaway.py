@@ -82,10 +82,19 @@ class TollBooth:
     def find_busy_hour(self):
         u = 0
         day = None
-        hour = None
+        busy_hour = None
 
         for date in self.dates:
-            for hour in date.hours
+            for hour in date.hours:
+                i = 0
+                for vehicle in hour:
+                    i =+ 1
+                if i > u:
+                    u = i
+                    day = date
+                    busy_hour = hour.index(hour)
+        return day, busy_hour, u
+                
 
     def print(self):
         for date in self.dates:
@@ -100,3 +109,6 @@ busy_day, i = bb.find_busy_day()
 print(
     f"The {busy_day.day}th of {busy_day.month} in {busy_day.year} was hella busy with {i} passings!!!"
 )
+
+busy_hour, day, u = bb.find_busy_hour()
+print(f"The hella busy hour was hour {busy_hour} of day {day.day} of {day.month} in {day.year}. {u} passings !!!")
