@@ -3,20 +3,20 @@ class Vehicle:
     Class to make vehicle and determine car type
 
     Parametres:
-        registration (string):  The registration number on the cars license plate
-        model (string):         The brand of the car
-        owner (string):         Name of the registered owner
-        year (int):             Production year
-        type (string):          Fuel usage
+        registration (string): The registration number on the cars license plate
+        model (string): The brand of the car
+        owner (string): Name of the registered owner
+        year (int): Production year
+        type (string): Fuel usage
     """
 
     def __init__(self, registration, model, year, owner):
         # __init__ that recieves and uses parameters
-        self.registration   = registration
-        self.model          = model
-        self.owner          = owner
-        self.year           = int(year)
-        self.type           = self.determine_type()
+        self.registration = registration
+        self.model = model
+        self.owner = owner
+        self.year = int(year)
+        self.type = self.determine_type()
 
     def determine_type(self):
         # Method for determining fuel type by license plate
@@ -41,6 +41,7 @@ class Date:
         day (str): The day as it was in the date parameter
         hours (str): Array with all 24 hours to keep track of passages during said hours
     """
+
     def __init__(self, date):
         # __init__ that takes the parameter and creates attributes
         self.date = date
@@ -58,6 +59,7 @@ class TollBooth:
         vehicles (list): List of all the cars as made in the Vehicle class
         dates (list): List of all the dates as made in the Date class
     """
+
     def __init__(self):
         # __init__ that creates attributes for the two other classes
         self.vehicles = []
@@ -112,7 +114,7 @@ class TollBooth:
                 u = i
                 busy_day = date
         return busy_day, u
-    
+
     def find_busy_hour(self):
         u = 0
         busy_hour = None
@@ -125,7 +127,7 @@ class TollBooth:
                 u = i
                 busy_hour = h
         return busy_hour, u
-    
+
     def find_busy_car(self):
         u = 0
         busy_car = None
@@ -141,8 +143,6 @@ class TollBooth:
                 u = i
                 busy_car = vehicle
         return busy_car, u
-            
-                
 
     def print(self):
         for date in self.dates:
@@ -162,4 +162,6 @@ busy_hour, u = bb.find_busy_hour()
 print(f"Hour {busy_hour} of the day was hella busy with {u} passings !!!")
 
 busy_car, y = bb.find_busy_car()
-print(f"{busy_car.owner}'s vehicle {busy_car.model}, is the hella busy car with {y} passings !!!")
+print(
+    f"{busy_car.owner}'s vehicle {busy_car.model}, is the hella busy car with {y} passings !!!"
+)
