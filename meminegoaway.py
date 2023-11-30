@@ -78,6 +78,14 @@ class TollBooth:
                 u = i
                 busy_day = date
         return busy_day, u
+    
+    def find_busy_hour(self):
+        u = 0
+        day = None
+        hour = None
+
+        for date in self.dates:
+            for hour in date.hours
 
     def print(self):
         for date in self.dates:
