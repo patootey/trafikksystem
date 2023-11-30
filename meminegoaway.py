@@ -152,10 +152,6 @@ class TollBooth:
                 busy_car = vehicle
         return busy_car, u
 
-    def print(self):
-        for date in self.dates:
-            print(date.hours)
-
 
 bb = TollBooth()
 
