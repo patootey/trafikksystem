@@ -64,10 +64,15 @@ class TollBooth:
         self.dates = []
 
     def read_data(self, data):
+        # Method that reads the data from the Trond file and uses the data 
+        # to make the objects and place them in their respective lists
         self.vehicles = []
         self.dates = []
+
+        # Opens the file to read
         with open(data, "r") as file:
             lines = file.readlines()
+            # Goes through all the lines 
             for line in lines:
                 entries = line.strip().split("/n")
                 for entry in entries:
