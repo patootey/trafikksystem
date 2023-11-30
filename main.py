@@ -7,7 +7,7 @@ class Vehicle:
         model (string): The brand of the car
         owner (string): Name of the registered owner
         year (int): Production year
-    
+
     Attribute:
         type (string): Fuel usage
     """
@@ -68,7 +68,7 @@ class TollBooth:
         self.dates = []
 
     def read_data(self, data):
-        # Method that reads the data from the Trond file and uses the data 
+        # Method that reads the data from the Trond file and uses the data
         # to make the objects and place them in their respective lists
         self.vehicles = []
         self.dates = []
@@ -135,10 +135,10 @@ class TollBooth:
                 busy_hour = h
         return busy_hour, u
 
-    def find_busy_car(self):
+    def find_busy_vehicle(self):
         # Method for finding which car passed the most
         u = 0
-        busy_car = None
+        busy_vehicle = None
 
         for vehicle in self.vehicles:
             i = 0
@@ -149,14 +149,14 @@ class TollBooth:
                             i += 1
             if i > u:
                 u = i
-                busy_car = vehicle
-        return busy_car, u
+                busy_vehicle = vehicle
+        return busy_vehicle, u
 
 
 bb = TollBooth()
 
 bb.read_data("trond.txt")
-print(bb.dates[0].hours[5][1].owner)
+
 busy_day, i = bb.find_busy_day()
 print(
     f"The {busy_day.day}th of {busy_day.month} in {busy_day.year} was hella busy with {i} passings !!!"
@@ -165,7 +165,7 @@ print(
 busy_hour, u = bb.find_busy_hour()
 print(f"Hour {busy_hour} of the day was hella busy with {u} passings !!!")
 
-busy_car, y = bb.find_busy_car()
+busy_vehicle, y = bb.find_busy_vehicle()
 print(
-    f"{busy_car.owner}'s {busy_car.type} vehicle {busy_car.model} {busy_car.year} with the registration {busy_car.registration}, was the most hella busy car with {y} passings !!!"
+    f"{busy_vehicle.owner}'s {busy_vehicle.type} vehicle {busy_vehicle.model} {busy_vehicle.year} with the registration {busy_vehicle.registration}, was the most hella busy car with {y} passings !!!"
 )
