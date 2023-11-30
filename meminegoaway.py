@@ -119,6 +119,22 @@ class TollBooth:
                 u = i
                 busy_hour = h
         return busy_hour, u
+    
+    def find_busy_car(self):
+        u = 0
+        busy_car = None
+
+        for vehicle in self.vehicles:
+            i = 0
+            for date in self.dates:
+                for hour in date.hours:
+                    for passing in hour:
+                        if vehicle == passing:
+                            i += 1
+            if i > u:
+                u = i
+                busy_car = vehicle
+        return busy_car, u
             
                 
 
@@ -138,3 +154,6 @@ print(
 
 busy_hour, u = bb.find_busy_hour()
 print(f"Hour {busy_hour} of the day was hella busy with {u} passings !!!")
+
+busy_car, y = bb.find_busy_car()
+print(f"{busy_car.owner}'s vehicle {busy_car.model}, is the hella busy car with {y} passings !!!")
