@@ -7,7 +7,7 @@ class Vehicle:
         model (string): The brand of the car
         owner (string): Name of the registered owner
         year (int): Production year
-    
+
     Attribute:
         type (string): Fuel usage
     """
@@ -68,7 +68,7 @@ class TollBooth:
         self.dates = []
 
     def read_data(self, data):
-        # Method that reads the data from the Trond file and uses the data 
+        # Method that reads the data from the Trond file and uses the data
         # to make the objects and place them in their respective lists
         self.vehicles = []
         self.dates = []
