@@ -92,7 +92,7 @@ class TollBooth:
                 if i > u:
                     u = i
                     day = date
-                    busy_hour = hour.index(hour)
+                    busy_hour = date.index(hour)
         return day, busy_hour, u
                 
 
